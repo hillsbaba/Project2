@@ -7,4 +7,8 @@
 
 `http://18.212.19.193:80`
 ![nginx default page](./images/Nginx_Installed.png)
+`sudo apt install mysql-server`
+`sudo mysql`
+![mysql](./images/mysql_installed.png)
+
 
