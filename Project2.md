@@ -24,3 +24,16 @@
 `http://54.162.76.18:80`
 ![Nginx-working](./images/Nginx-working.png)
 
+`sudo nano /var/www/projectLEMP/info.php`
+`http://54.162.76.18/info.php`
+![php-info](./images/php-info.png)
+
+`sudo mysql
+` CREATE DATABASE `example_database`;`
+`CREATE USER 'example_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';`
+`GRANT ALL ON example_database.* TO 'example_user'@'%';`
+
+`mysql -u example_user -p`
+`mysql>SHOW DATABASES;`
+![showDB](./images/showDB.png)
+
