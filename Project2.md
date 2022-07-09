@@ -11,4 +11,16 @@
 `sudo mysql`
 ![mysql](./images/mysql_installed.png)
 
+`sudo apt install php-fpm php-mysql`
+`sudo mkdir /var/www/projectLEMP`
+`sudo chown -R $USER:$USER /var/www/projectLEMP`
+`sudo nano /etc/nginx/sites-available/projectLEMP`
+`sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/`
+`sudo nginx -t`
+![nginx](./images/Nginx.png)
+`sudo systemctl reload nginx`
+`sudo echo 'Hello LEMP from hostname' $(curl -s http://54.162.76.18/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://54.162.76.18/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
+
+`http://54.162.76.18:80`
+![Nginx-working](./images/Nginx-working.png)
 
