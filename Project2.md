@@ -37,3 +37,11 @@
 `mysql>SHOW DATABASES;`
 ![showDB](./images/showDB.png)
 
+`mysql>INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
+`mysql>  SELECT * FROM example_database.todo_list;`
+![mysql_content](./images/mysql_content.png)
+
+`mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
+`mysql>  SELECT * FROM example_database.todo_list;`
+![todo_list](./images/todo_list.png)
+
