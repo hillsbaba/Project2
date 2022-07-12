@@ -19,7 +19,7 @@
 `sudo nginx -t`
 ![nginx](./images/Nginx.png)
 `sudo systemctl reload nginx`
-`sudo echo 'Hello LEMP from hostname' $(curl -s http://54.162.76.18/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://54.162.76.18/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
+`sudo echo 'Hello LEMP from hostname' $(curl -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(curl -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectLEMP/index.html`
 
 `http://54.162.76.18:80`
 ![Nginx-working](./images/Nginx-working.png)
@@ -44,4 +44,26 @@
 `mysql> INSERT INTO example_database.todo_list (content) VALUES ("My first important item");`
 `mysql>  SELECT * FROM example_database.todo_list;`
 ![todo_list](./images/todo_list.png)
+
+`nano /var/www/projectLEMP/todo_list.php`
+`<?php
+$user = "example_user";
+$password = "password";
+$database = "example_database";
+$table = "todo_list";
+
+try {
+  $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
+  echo "<h2>TODO</h2><ol>";
+  foreach($db->query("SELECT content FROM $table") as $row) {
+    echo "<li>" . $row['content'] . "</li>";
+  }
+  echo "</ol>";
+} catch (PDOException $e) {
+    print "Error!: " . $e->getMessage() . "<br/>";
+    die();
+}`
+
+`http://54.92.223.12>/todo_list.php`
+![todo_list.php](./images/todo_list.php.png)`
 
